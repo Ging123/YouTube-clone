@@ -8,9 +8,129 @@ html {
 }
 
 :root {
-  
+  --lightRed:#fe0000;
+  --darkBlue:#365783;
+  --lightGray:#f2f2f2;
 }
 
+i {
+  cursor:pointer;
+}
+
+/*SITE HEADER*/
 header {
-  
+  position:relative;
+  bottom:8px;
+  right:8px;
+  width:100vw;
+  font-size:2rem;
+  padding:20px;
+  border:solid black;
+  display:flex;
+  flex-flow:row;
+  white-space:nowrap;
+}
+
+header > i {
+  border:solid;
+  flex-grow:0.1;
+}
+
+#youtubeLogo {
+  margin-left:10px;
+  flex-grow:0.1;
+  border:solid;
+}
+
+#youtubeLogo i {
+  color:var(--lightRed);
+  font-size:2.5rem;
+}
+
+#youtubeLogo span {
+  font-weight:600;
+  margin-left:-5px;
+}
+
+#singIn img {
+  width:20px;
+  height:20px;
+}
+
+#searchBar {
+  margin:0px 10px;
+  flex-grow:15;
+  border:solid;
+  display:inline-block;
+  text-align:center;
+}
+
+#searchBar input {
+  width:60%;
+  padding:6px;
+  font-size:1.6rem;
+  border:0.1px solid gray;
+}
+
+#searchBar input:focus {
+  outline:0.1px solid var(--darkBlue);
+}
+
+#searchBar button {
+  position:relative;
+  right:8px;
+  background-color:var(--lightGray);
+  border:0.1px solid gray;
+  outline:none;
+}
+
+#searchBar button:hover {
+  filter:brightness(95%);
+  cursor:pointer;
+}
+
+#searchBar button i {
+  padding:8px 20px 7px 20px;
+}
+
+#searchBar > i {
+  position:relative;
+  top:3px;
+  margin-left:-6px;
+  width:45px;
+  padding:7px 0px;
+  border-radius:50px;
+  border:solid;
+}
+
+#siteOptions {
+  border:solid;
+  display:inline-flex;
+  flex-flow:row;
+  flex-grow:0.1;
+}
+
+#siteOptions i {
+  border:solid green;
+  width:50px;
+  padding:3px 0px;
+  border-radius:50px;
+  width:45px;
+  padding:8px 0px;
+  text-align:center;
+  margin-right:7px;
+}
+
+#singIn {
+  border:0.5px solid var(--darkBlue);
+  display:flex;
+  flex-flow:row;
+  align-items:center;
+}
+
+#singIn img {
+  height:30px;
+  width:30px;
+  border-radius:50px;
+  margin-left:5px;
 }
