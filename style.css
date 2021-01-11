@@ -10,7 +10,10 @@ html {
 :root {
   --lightRed:#fe0000;
   --darkBlue:#365783;
+  --lightBlue:#628ac0;
   --lightGray:#f2f2f2;
+  --lineGray:#dad7d7;
+  --darkGray:#3b3b3b;
 }
 
 i {
@@ -100,6 +103,7 @@ header > i {
   width:45px;
   padding:7px 0px;
   border-radius:50px;
+  color:var(--darkGray);
   border:solid;
 }
 
@@ -119,18 +123,107 @@ header > i {
   padding:8px 0px;
   text-align:center;
   margin-right:7px;
+  color:var(--darkGray);
 }
 
-#singIn {
-  border:0.5px solid var(--darkBlue);
+.singIn {
+  border:1px solid var(--darkBlue);
   display:flex;
   flex-flow:row;
   align-items:center;
+  color:var(--lightBlue);
+  font-size:1.6rem;
+  cursor:pointer;
+  font-weight:600;
 }
 
-#singIn img {
+.singIn img {
   height:30px;
   width:30px;
   border-radius:50px;
-  margin-left:5px;
+  margin:0px 5px;
+}
+
+/*Tela principal*/
+#mainScreen {
+  position:relative;
+  right:8px;
+  border:solid red;
+  background-color:var(--lightGray);
+  display:flex;
+  flex-flow:row;
+  width:100vw;
+}
+
+/*Hover da tela principal*/
+#leftHover {
+  overflow:scroll;
+  display:column;
+  width:250px;
+  height:525px;
+  border:solid;
+  color:var(--darkGray);
+  font-size:1.8rem;
+}
+
+.hoverSquares {
+  padding:5px 0px;
+  border-bottom:1px solid #dad7d7;
+}
+
+#leftHover .hoverOption {
+  position:relative;
+  width:100%;
+  padding:8px 20px;
+}
+
+#leftHover .hoverOption:hover {
+  filter:brightness(85%);
+  background-color:white;
+  cursor:pointer;
+}
+
+#leftHover .hoverOption > i {
+  font-size:2rem;
+}
+
+#leftHover .hoverOption span {
+  position:absolute;
+  left:70px;
+}
+
+#signInByHover {
+  text-align:center;
+}
+
+#signInByHover > div:first-child {
+  font-size:1.6rem;
+  padding:8px 20px;
+}
+
+#signInByHover > .singIn {
+  display:inline-flex;
+  padding:5px 16px 5px 12px;
+}
+
+.hoverSquareTitle {
+  padding:5px 0px 10px 0px;
+  text-align:center;
+  font-weight:550;
+  text-transform:uppercase;
+  font-size:1.6rem;
+}
+
+footer > div:first-child {
+  margin-bottom:10px;
+} 
+
+footer a {
+  display:block;
+  font-size:1.3rem;
+  color:rgb(100, 100, 100);
+  text-decoration:none;
+  font-weight:550;
+  padding-top:2px;
+  margin-left:20px;
 }
