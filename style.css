@@ -16,6 +16,10 @@ html {
   --darkGray:#3b3b3b;
 }
 
+body {
+  overflow:hidden;
+}
+
 i {
   cursor:pointer;
 }
@@ -144,23 +148,14 @@ header > i {
   margin:0px 5px;
 }
 
-/*Tela principal*/
-#mainScreen {
-  position:relative;
-  right:8px;
-  border:solid red;
-  background-color:var(--lightGray);
-  display:flex;
-  flex-flow:row;
-  width:100vw;
-}
-
 /*Hover da tela principal*/
 #leftHover {
+  position:fixed;
+  left:0px;
   overflow:scroll;
   display:column;
   width:250px;
-  height:525px;
+  height:550px;
   border:solid;
   color:var(--darkGray);
   font-size:1.8rem;
