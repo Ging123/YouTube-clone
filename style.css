@@ -148,7 +148,8 @@ header > i {
   margin:0px 5px;
 }
 
-/*Hover da tela principal*/
+/*Main left hover*/
+
 #leftHover {
   position:fixed;
   left:0px;
@@ -221,4 +222,157 @@ footer a {
   font-weight:550;
   padding-top:2px;
   margin-left:20px;
+}
+
+/*Area of the videos*/
+#gridOfYoutubeVideos {
+  position:absolute;
+  right:8px;
+  width:80.5%;
+  border:solid red;
+  display:grid;
+  grid-template-columns:25% 25% 25% 25%;
+}
+
+.videoContainer {
+  cursor:pointer;
+}
+
+.videoImageContainer {
+  position:relative;
+}
+
+.videoHover {
+  position:absolute;
+  right:5px;
+  font-size:1.8rem;
+  color:white;
+  background:#000000d7;
+  border-radius:2px;
+  opacity:0;
+  padding:5px;
+  white-space:nowrap;
+  display:flex;
+  flex-flow:row;
+  max-width:150px;
+}
+
+.videoHover:hover {  
+  background:#000000ea;
+}
+
+.videoHover.watch {
+  top:5px;
+}
+
+.videoHover.add {
+  top:45px;
+}
+
+.videoHover span {
+  display:block;
+  font-weight:600;
+  width:0px;
+  overflow:hidden;
+  transition:width .3s;
+  color:white;
+}
+
+.videoHover:hover > span {
+  width:120px;
+  display:block;
+}
+
+.videoHover > i {
+  width:24.2px;
+  opacity:1;
+  text-align:center;
+}
+
+.videoContainer:hover .videoHover {
+  opacity:1;
+}
+
+.videoTime {
+  position:absolute;
+  bottom:5px;
+  right:5px;
+  padding:5px;
+  color:white;
+  background:#000000d7;
+  font-size:1.2rem;
+  font-weight:700;
+  opacity:1;
+  transition:opacity .3s;
+}
+
+.videoContainer:hover .videoTime {
+  opacity:0;
+}
+
+.videoImage {
+  width:100%;
+}
+
+.videosInfos {
+  position:relative;
+  display:flex;
+  flex-flow:row;
+  align-items:flex-start;
+  margin-top:5px;
+  width:100%;
+}
+
+.channelImage {
+  width:40px;
+  height:40px;
+  border-radius:100px;
+  margin-right:10px;
+}
+
+.addToQueue {
+  font-size:2rem;
+  color:gray;
+  margin-left:10px;
+  opacity:0;
+}
+
+.addToQueue:hover {
+  color:var(--darkGray);
+}
+
+.videoContainer:hover .addToQueue {
+  opacity:1;
+}
+
+.infos {
+  flex-grow:1;
+  color:gray;
+  font-size:1.4rem;
+}
+
+.videoTitle {
+  font-weight:600;
+  font-size:1.8rem;
+  color:black;
+  max-width:100%;
+  max-height:45px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  word-break:break-all;
+}
+
+.channelName {
+  margin-top:10px;
+  white-space:nowrap;
+  overflow:hidden;
+}
+
+.viewAndYear {
+  white-space:nowrap;
+  overflow:hidden;
+}
+
+.channelName:hover {
+  color:black;
 }
