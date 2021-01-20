@@ -17,7 +17,8 @@ html {
 }
 
 body {
-  overflow:hidden;
+  overflow-x:hidden;
+  overflow-y:scroll;
 }
 
 i {
@@ -26,9 +27,9 @@ i {
 
 /*SITE HEADER*/
 header {
-  position:relative;
-  bottom:8px;
-  right:8px;
+  position:fixed;
+  top:0px;
+  left:0px;
   width:100vw;
   font-size:2rem;
   padding:20px;
@@ -36,6 +37,8 @@ header {
   display:flex;
   flex-flow:row;
   white-space:nowrap;
+  z-index:100;
+  background:white;
 }
 
 header > i {
@@ -149,9 +152,9 @@ header > i {
 }
 
 /*Main left hover*/
-
 #leftHover {
   position:fixed;
+  top:95px;
   left:0px;
   overflow-y:scroll;
   display:column;
@@ -227,11 +230,13 @@ footer a {
 /*Area of the videos*/
 #gridOfYoutubeVideos {
   position:absolute;
+  top:95px;
   right:8px;
   width:80.5%;
-  border:solid red;
   display:grid;
-  grid-template-columns:25% 25% 25% 25%;
+  grid-template-columns:24% 24% 24% 24%;
+  grid-gap:30px 15px;
+  padding:10px;
 }
 
 .videoContainer {
