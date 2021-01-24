@@ -16,368 +16,92 @@ html {
   --darkGray:#3b3b3b;
 }
 
-body {
-  overflow-x:hidden;
-  overflow-y:scroll;
+/*GENERICS CLASSES*/
+.imgAccount {
+  width:30px;
+  height:30px;
+  border-radius:100px;
 }
 
-i {
+.circularIconeBorder {
   cursor:pointer;
+  width:40px;
+  padding:8px 0px;
+  border-radius:100px;
+  text-align:center;
 }
 
-/*SITE HEADER*/
+/*WEBSITE HEADER*/
 header {
   position:fixed;
   top:0px;
   left:0px;
-  width:100vw;
-  font-size:2rem;
-  padding:20px;
-  border:solid black;
+  width:100%;
+  background-color:white;
+  border:.1px solid black;
   display:flex;
-  flex-flow:row;
-  white-space:nowrap;
-  z-index:100;
-  background:white;
-}
-
-header > i {
-  border:solid;
-  flex-grow:0.1;
+  flex-flow:row nowrap;
+  font-size:1.8rem;
+  padding:10px;
+  color:var(--darkGray);
+  align-items:center;
+  justify-content:space-between;
 }
 
 #youtubeLogo {
-  margin-left:10px;
-  flex-grow:0.1;
-  border:solid;
-}
-
-#youtubeLogo i {
-  color:var(--lightRed);
-  font-size:2.5rem;
-}
-
-#youtubeLogo span {
-  font-weight:600;
-  margin-left:-5px;
-}
-
-#singIn img {
-  width:20px;
-  height:20px;
-}
-
-#searchBar {
-  margin:0px 10px;
-  flex-grow:15;
-  border:solid;
-  display:inline-block;
-  text-align:center;
-}
-
-#searchBar input {
-  width:60%;
-  padding:6px;
-  font-size:1.6rem;
-  border:0.1px solid gray;
-}
-
-#searchBar input:focus {
-  outline:0.1px solid var(--darkBlue);
-}
-
-#searchBar button {
-  position:relative;
-  right:8px;
-  background-color:var(--lightGray);
-  border:0.1px solid gray;
-  outline:none;
-}
-
-#searchBar button:hover {
-  filter:brightness(95%);
-  cursor:pointer;
-}
-
-#searchBar button i {
-  padding:8px 20px 7px 20px;
-}
-
-#searchBar > i {
-  position:relative;
-  top:3px;
-  margin-left:-6px;
-  width:45px;
-  padding:7px 0px;
-  border-radius:50px;
-  color:var(--darkGray);
-  border:solid;
-}
-
-#siteOptions {
-  border:solid;
-  display:inline-flex;
-  flex-flow:row;
-  flex-grow:0.1;
-}
-
-#siteOptions i {
-  border:solid green;
-  width:50px;
-  padding:3px 0px;
-  border-radius:50px;
-  width:45px;
-  padding:8px 0px;
-  text-align:center;
-  margin-right:7px;
-  color:var(--darkGray);
-}
-
-.singIn {
-  border:1px solid var(--darkBlue);
-  display:flex;
-  flex-flow:row;
-  align-items:center;
-  color:var(--lightBlue);
-  font-size:1.6rem;
-  cursor:pointer;
-  font-weight:600;
-}
-
-.singIn img {
-  height:30px;
-  width:30px;
-  border-radius:50px;
-  margin:0px 5px;
-}
-
-/*Main left hover*/
-#leftHover {
-  position:fixed;
-  top:95px;
-  left:0px;
-  overflow-y:scroll;
-  display:column;
-  width:250px;
-  height:550px;
-  border:solid;
-  color:var(--darkGray);
-  font-size:1.8rem;
-}
-
-.hoverSquares {
-  padding:5px 0px;
-  border-bottom:1px solid #dad7d7;
-}
-
-#leftHover .hoverOption {
-  position:relative;
-  width:100%;
-  padding:8px 20px;
-}
-
-#leftHover .hoverOption:hover {
-  filter:brightness(85%);
-  background-color:white;
-  cursor:pointer;
-}
-
-#leftHover .hoverOption > i {
-  font-size:2rem;
-}
-
-#leftHover .hoverOption span {
-  position:absolute;
-  left:70px;
-}
-
-#signInByHover {
-  text-align:center;
-}
-
-#signInByHover > div:first-child {
-  font-size:1.6rem;
-  padding:8px 20px;
-}
-
-#signInByHover > .singIn {
-  display:inline-flex;
-  padding:5px 16px 5px 12px;
-}
-
-.hoverSquareTitle {
-  padding:5px 0px 10px 0px;
-  text-align:center;
-  font-weight:550;
-  text-transform:uppercase;
-  font-size:1.6rem;
-}
-
-footer > div:first-child {
-  margin-bottom:10px;
-} 
-
-footer a {
-  display:block;
-  font-size:1.3rem;
-  color:rgb(100, 100, 100);
-  text-decoration:none;
-  font-weight:550;
-  padding-top:2px;
-  margin-left:20px;
-}
-
-/*Area of the videos*/
-#gridOfYoutubeVideos {
-  position:absolute;
-  top:95px;
-  right:8px;
-  width:80.5%;
-  display:grid;
-  grid-template-columns:24% 24% 24% 24%;
-  grid-gap:30px 15px;
-  padding:10px;
-}
-
-.videoContainer {
-  cursor:pointer;
-}
-
-.videoImageContainer {
-  position:relative;
-}
-
-.videoHover {
-  position:absolute;
-  right:5px;
-  font-size:1.8rem;
-  color:white;
-  background:#000000d7;
-  border-radius:2px;
-  opacity:0;
-  padding:5px;
   white-space:nowrap;
-  display:flex;
-  flex-flow:row;
-  max-width:150px;
 }
 
-.videoHover:hover {  
-  background:#000000ea;
+#youtubeLogo > i:first-child + i {
+  color:red;
+  font-size:2.2rem;
+  cursor:pointer;
 }
 
-.videoHover.watch {
-  top:5px;
-}
-
-.videoHover.add {
-  top:45px;
-}
-
-.videoHover span {
-  display:block;
-  font-weight:600;
-  width:0px;
-  overflow:hidden;
-  transition:width .3s;
-  color:white;
-}
-
-.videoHover:hover > span {
-  width:120px;
-  display:block;
-}
-
-.videoHover > i {
-  width:24.2px;
-  opacity:1;
-  text-align:center;
-}
-
-.videoContainer:hover .videoHover {
-  opacity:1;
-}
-
-.videoTime {
-  position:absolute;
-  bottom:5px;
-  right:5px;
-  padding:5px;
-  color:white;
-  background:#000000d7;
-  font-size:1.2rem;
+#youtubeLogo > span {
   font-weight:700;
-  opacity:1;
-  transition:opacity .3s;
-}
-
-.videoContainer:hover .videoTime {
-  opacity:0;
-}
-
-.videoImage {
-  width:100%;
-}
-
-.videosInfos {
-  position:relative;
-  display:flex;
-  flex-flow:row;
-  align-items:flex-start;
-  margin-top:5px;
-  width:100%;
-}
-
-.channelImage {
-  width:40px;
-  height:40px;
-  border-radius:100px;
+  margin-left:-5px;
+  cursor:pointer;
   margin-right:10px;
 }
 
-.addToQueue {
-  font-size:2rem;
-  color:gray;
+#searchArea {
+  display:flex;
+  align-items:center;
+  width:55%;
+}
+
+#searchArea input {
+  padding:5px 10px;
+  font-size:1.6rem;
+  outline:none;
+  z-index:5;
+  width:90%;
+}
+
+#searchArea input:focus {
+  outline:0.1px solid var(--darkBlue);
+}
+
+#searchArea > button {
+  position:relative;
+  right:1.5px;
+  width:65px;
+  height:32px;
+  margin-right:5px;
+}
+
+#optionsOfMyAccount {
+  display:flex;
+  flex-flow:row;
+  align-items:center;
+}
+
+#optionsOfMyAccount i {
+  margin:0px 5px;
+}
+
+#optionsOfMyAccount > img {
   margin-left:10px;
-  opacity:0;
 }
 
-.addToQueue:hover {
-  color:var(--darkGray);
-}
-
-.videoContainer:hover .addToQueue {
-  opacity:1;
-}
-
-.infos {
-  flex-grow:1;
-  color:gray;
-  font-size:1.4rem;
-}
-
-.videoTitle {
-  font-weight:600;
-  font-size:1.8rem;
-  color:black;
-  max-width:100%;
-  max-height:45px;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  word-break:break-all;
-}
-
-.channelName {
-  margin-top:5px;
-  white-space:nowrap;
-  overflow:hidden;
-}
-
-.viewAndYear {
-  white-space:nowrap;
-  overflow:hidden;
-}
-
-.channelName:hover {
-  color:black;
-}
