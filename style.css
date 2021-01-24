@@ -26,9 +26,39 @@ html {
 .circularIconeBorder {
   cursor:pointer;
   width:40px;
-  padding:8px 0px;
+  padding:9px 0px;
   border-radius:100px;
   text-align:center;
+}
+
+/*ANIMATIONS*/
+.darkRippleAnimation {
+  animation-name:darkRippleEfect;
+  animation-duration:0.2s;
+  animation-fill-mode:forwards;
+}
+
+@keyframes darkRippleEfect {
+  5% {background:radial-gradient(circle, var(--lineGray) 5%, transparent 0% );}
+  10% {background:radial-gradient(circle, var(--lineGray) 10%, transparent 0% );}
+  15% {background:radial-gradient(circle, var(--lineGray) 15%, transparent 0% );}
+  20% {background:radial-gradient(circle, var(--lineGray) 20%, transparent 0% );}
+  25% {background:radial-gradient(circle, var(--lineGray) 25%, transparent 0% );}
+  30% {background:radial-gradient(circle, var(--lineGray) 30%, transparent 0% );}
+  35% {background:radial-gradient(circle, var(--lineGray) 35%, transparent 0% );}
+  40% {background:radial-gradient(circle, var(--lineGray) 40%, transparent 0% );}
+  45% {background:radial-gradient(circle, var(--lineGray) 45%, transparent 0% );}
+  50% {background:radial-gradient(circle, var(--lineGray) 50%, transparent 0% );}
+  55% {background:radial-gradient(circle, var(--lineGray) 55%, transparent 0% );}
+  60% {background:radial-gradient(circle, var(--lineGray) 60%, transparent 0% );}
+  65% {background:radial-gradient(circle, var(--lineGray) 65%, transparent 0% );}
+  70% {background:radial-gradient(circle, var(--lineGray) 70%, transparent 0% );}
+  75% {background:radial-gradient(circle, var(--lineGray) 75%, transparent 0% );}
+  80% {background:radial-gradient(circle, var(--lineGray) 80%, transparent 0% );}
+  85% {background:radial-gradient(circle, var(--lineGray) 85%, transparent 0% );}
+  90% {background:radial-gradient(circle, var(--lineGray) 90%, transparent 0% );}
+  95% {background:radial-gradient(circle, var(--lineGray) 95%, transparent 0% );}
+  100% {background:radial-gradient(circle, var(--lineGray) 100%, transparent 0% );}
 }
 
 /*WEBSITE HEADER*/
