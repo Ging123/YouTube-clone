@@ -1,3 +1,4 @@
+//FUNCTIONS FOR MANIPULATE OR CREATE ELEMENTS
 function editElementClass(elementQuery = "", index = 0, newClass = "", removeThisClass = "") {
   const element = document.querySelectorAll(elementQuery);
   element[index].classList += ` ${newClass}`;

@@ -119,6 +119,7 @@ header {
   width:65px;
   height:32px;
   margin-right:5px;
+  cursor:pointer;
 }
 
 #optionsOfMyAccount {
@@ -133,5 +134,73 @@ header {
 
 #optionsOfMyAccount > img {
   margin-left:10px;
+  cursor:pointer;
 }
 
+/*LEFT HOVER*/
+#leftHover {
+  position:fixed;
+  top:60px;
+  left:0px;
+  width:220px;
+  height:90vh;
+  background-color:white;
+  overflow-y:hidden;
+  overflow-x:hidden;
+  color:var(--darkGray);
+  font-size:1.5rem;
+  border:.1px solid;
+}
+
+#leftHover:hover {
+  overflow-y:scroll;
+}
+
+#leftHover > nav {
+  padding:5px 0px;
+  border-bottom:.1px solid var(--lineGray);
+}
+
+#leftHover > nav .options {
+  padding:5px 10px;
+  cursor:pointer;
+}
+
+#leftHover > nav .options:hover {
+  background-color:var(--lightGray);
+}
+
+#leftHover > nav .options > i {
+  min-width:30px;
+  max-width:50px;
+  margin-right:10px;
+  text-align:center;
+  font-size:1.8rem;
+}
+
+#leftHover > nav .title {
+  padding:5px 14px;
+  font-weight:600;
+  text-transform:uppercase;
+  font-size:1.4rem;
+}
+
+/*WEBSITE FOOTER*/
+footer > section {
+  color:var(--darkGray);
+  padding:5px 14.5px;
+  font-size:1.2rem;
+}
+
+footer > section > a {
+  text-decoration:none;
+  display:block;
+  color:#525050;
+  font-weight:550;
+}
+
+footer div:last-child {
+  padding:10px 14.5px;
+  color:gray;
+  font-size:1.2rem;
+}
