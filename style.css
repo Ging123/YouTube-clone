@@ -31,6 +31,10 @@ html {
   text-align:center;
 }
 
+.noVisibleElement {
+  display:none;
+}
+
 /*ANIMATIONS*/
 .darkRippleAnimation {
   animation-name:darkRippleEfect;
@@ -107,6 +111,7 @@ header {
   outline:none;
   z-index:5;
   width:90%;
+  border:.1px solid var(--lineGray);
 }
 
 #searchArea input:focus {
@@ -117,9 +122,17 @@ header {
   position:relative;
   right:1.5px;
   width:65px;
-  height:32px;
+  height:30px;
   margin-right:5px;
+  border:.1px solid var(--lineGray);
   cursor:pointer;
+  color:gray;
+  outline:none;
+}
+
+#searchArea > button:hover {
+  color:black;
+  box-shadow:0px 0px 1px gray;
 }
 
 #optionsOfMyAccount {
@@ -141,7 +154,7 @@ header {
 #leftHover {
   position:fixed;
   top:60px;
-  left:0px;
+  left:6px;
   width:220px;
   height:90vh;
   background-color:white;
@@ -183,6 +196,37 @@ header {
   font-weight:600;
   text-transform:uppercase;
   font-size:1.4rem;
+}
+
+/*SMALLER LEFT HOVER*/
+#smallLeftHover {
+  position:fixed;
+  top:60px;
+  left:6px;
+  height:90vh;
+  width:70px;
+  background-color:white;
+  color:var(--darkGray);
+  font-size:1.5rem;
+  border:.1px solid;
+}
+
+#smallLeftHover > div {
+  text-align:center;
+  display:flex;
+  flex-flow:column nowrap;
+  padding:20px 3px;
+  font-size:1rem;
+  cursor:pointer;
+}
+
+#smallLeftHover > div:hover {
+  background-color:var(--lightGray);
+}
+
+#smallLeftHover > div > i {
+  font-size:2rem;
+  margin-bottom:5px;
 }
 
 /*WEBSITE FOOTER*/
