@@ -24,6 +24,19 @@ function executeRippleAnimation(elementQuery = "", index = 0, endAnimation = fal
   if(endAnimation === false) { 
     editElementClass(elementQuery, index, "darkRippleAnimation"); 
   } else { 
-    setTimeout(() => { editElementClass(elementQuery, index, "", "darkRippleAnimation"); }, 300);
+    setTimeout(() => { editElementClass(elementQuery, index, "", "darkRippleAnimation"); }, 220);
   }
 }
+
+//FUNCTIONS EXECUTED WHEN THE SITE IS OPEN
+function putRippleEfectsInTheIcones() {
+  const icones = document.getElementsByClassName("circularIconeBorder");
+  const len = icones.length;
+  for(let i = 0; i < len; i++) {
+    icones[i].addEventListener("mousedown", () => {executeRippleAnimation(".circularIconeBorder", i)});
+    icones[i].addEventListener("mouseup", () => {executeRippleAnimation(".circularIconeBorder", i, true)});
+    icones[i].addEventListener("mouseout", () => {executeRippleAnimation(".circularIconeBorder", i, true)})
+  }
+}
+
+putRippleEfectsInTheIcones();
