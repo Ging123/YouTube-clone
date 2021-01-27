@@ -1,4 +1,5 @@
 var bigHoverIsVisible = true;
+var loop;
 
 var SmallLeftHoverOptions = {
   classes: ["fas fa-home", "fas fa-fire", "fas fa-tv", "fas fa-book-open"],
@@ -71,8 +72,7 @@ function putIconesAndSpanInTheDivInTheSmallHover() {
 
 //FUNCTION OF INTERATIONS
 function manipulateTheLeftHoverByClick() {
-  const screenWidth = window.innerWidth;
-  if (screenWidth > 1301) {
+  if (window.innerWidth > 1301) {
     if (bigHoverIsVisible === true) {
       editElementClass("#leftHover", 0, "noVisibleElement");
       editElementClass("#smallLeftHover", 0, "", "noVisibleElement");
@@ -91,14 +91,34 @@ function manipulateTheLeftHoverByClick() {
 function openOrCloseTheLeftHoverModel(openHover = true) {
   if(openHover === true) {
     editElementClass("#model", 0, "", "noVisibleElement");
+    editElementClass(".youtubeLogo", 1, "", "noVisibleElement");
     editElementClass("#leftHover", 0, "leftHoverMoveAnimation", "noVisibleElement");
     document.querySelectorAll("#leftHover")[0].id = "leftHoverFromModel";
+    loop = setInterval(closeTheModelIfTheSizeOfTheScreenBeBig, 1);
   } else {
     editElementClass("#model", 0, "noVisibleElement");
+    editElementClass(".youtubeLogo", 1, "noVisibleElement");
     editElementClass("#leftHoverFromModel", 0, "", "leftHoverMoveAnimation");
     document.querySelectorAll("#leftHoverFromModel")[0].id = "leftHover";
   }
 }
+
+
+function closeTheModelIfTheSizeOfTheScreenBeBig() {
+  if(window.innerWidth > 1301) {
+    openOrCloseTheLeftHoverModel(false);
+    clearInterval(loop);
+    if(bigHoverIsVisible === true) {
+      bigHoverIsVisible = false;
+      manipulateTheLeftHoverByClick();
+    } 
+    else {
+      bigHoverIsVisible = true;
+      manipulateTheLeftHoverByClick();
+    }
+  }
+}
+
 
 putRippleEfectsInTheIcones();
 putIconesAndSpanInTheDivInTheSmallHover();

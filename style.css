@@ -103,19 +103,19 @@ header {
   justify-content:space-between;
 }
 
-#youtubeLogo {
+.youtubeLogo {
   white-space:nowrap;
 }
 
-#youtubeLogo > i:first-child + i {
+.youtubeLogo > i:first-child + i {
   color:red;
   font-size:2.2rem;
   cursor:pointer;
 }
 
-#youtubeLogo > span {
+.youtubeLogo > span {
   font-weight:700;
-  margin-left:-5px;
+  margin-left:-3px;
   cursor:pointer;
   margin-right:10px;
 }
@@ -262,7 +262,7 @@ header {
   top:0px;
   left:0px;
   width:220px;
-  height:98%;
+  height:100%;
   background-color:white;
   overflow-y:hidden;
   overflow-x:hidden;
@@ -319,7 +319,6 @@ footer div:last-child {
 }
 
 /*MEDIAS OF THE CODE*/
-
 @media(min-width:1300px) {
   #smallLeftHover.noVisibleElement {display:none;}
 }

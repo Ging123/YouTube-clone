@@ -14,7 +14,7 @@
   <div id="model" class="noVisibleElement" onclick="openOrCloseTheLeftHoverModel(false)"></div>
 
   <header>
-    <div id="youtubeLogo">
+    <div class="youtubeLogo">
       <i class="fas fa-bars circularIconeBorder" onclick="manipulateTheLeftHoverByClick()"></i>
       <i class="fab fa-youtube"></i>
       <span>YouTube</span>
@@ -35,6 +35,12 @@
   </header>
 
   <section id="leftHover">
+    <div class="youtubeLogo noVisibleElement" style="padding:10px; border-bottom:.1px solid var(--lineGray);">
+      <i class="fas fa-bars circularIconeBorder" onclick="openOrCloseTheLeftHoverModel(false)"
+      style="font-size:2rem;"></i>
+      <i class="fab fa-youtube"></i>
+      <span style="font-size:1.8rem;">YouTube</span>
+    </div>
     <nav>
       <div class="options">
         <i class="fas fa-home"></i>
@@ -146,7 +152,7 @@
       <section>
         <a href="https://www.youtube.com/about/policies/" target="blanket">Terms Privacy Policy & Safety</a>
         <a href="https://www.youtube.com/howyoutubeworks?utm_campaign=ytgen&utm_source=ythp&utm_medium=LeftNav&utm_content=txt&u=https%3A%2F%2Fwww.youtube.com%2Fhowyoutubeworks%3Futm_source%3Dythp%26utm_medium%3DLeftNav%26utm_campaign%3Dytgen"
-         target="blanket">How YouTube works</a>
+          target="blanket">How YouTube works</a>
         <a href="https://www.youtube.com/new" target="blanket">Test new features</a>
       </section>
       <div>© 2021 Google LLC</div>
