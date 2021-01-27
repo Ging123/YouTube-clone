@@ -14,6 +14,7 @@ function createNewElement(tag = "", text = "", elementClass = "", id = "") {
   return newElement;
 }
 
+
 function editElementClass(elementQuery = "", index = 0, newClass = "", removeSomeClass = "") {
   const element = document.querySelectorAll(elementQuery);
   element[index].classList += ` ${newClass}`;
@@ -68,14 +69,9 @@ function putIconesAndSpanInTheDivInTheSmallHover() {
   }
 }
 
-function getTheWidthOfTheScreen() {
-  const screenSize = window.innerWidth;
-  return screenSize;
-}
-
 //FUNCTION OF INTERATIONS
 function manipulateTheLeftHoverByClick() {
-  const screenWidth = getTheWidthOfTheScreen();
+  const screenWidth = window.innerWidth;
   if (screenWidth > 1301) {
     if (bigHoverIsVisible === true) {
       editElementClass("#leftHover", 0, "noVisibleElement");
@@ -86,9 +82,23 @@ function manipulateTheLeftHoverByClick() {
       editElementClass("#leftHover", 0, "", "noVisibleElement");
       bigHoverIsVisible = true;
     }
+  } else {
+    openOrCloseTheLeftHoverModel();
   }
 }
 
+
+function openOrCloseTheLeftHoverModel(openHover = true) {
+  if(openHover === true) {
+    editElementClass("#model", 0, "", "noVisibleElement");
+    editElementClass("#leftHover", 0, "leftHoverMoveAnimation", "noVisibleElement");
+    document.querySelectorAll("#leftHover")[0].id = "leftHoverFromModel";
+  } else {
+    editElementClass("#model", 0, "noVisibleElement");
+    editElementClass("#leftHoverFromModel", 0, "", "leftHoverMoveAnimation");
+    document.querySelectorAll("#leftHoverFromModel")[0].id = "leftHover";
+  }
+}
 
 putRippleEfectsInTheIcones();
 putIconesAndSpanInTheDivInTheSmallHover();

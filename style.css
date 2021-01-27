@@ -16,7 +16,17 @@ html {
   --darkGray:#3b3b3b;
 }
 
-/*GENERICS CLASSES*/
+/*GENERICS CLASSES AND ID*/
+#model {
+  position:absolute;
+  top:0px;
+  left:0px;
+  background:rgba(0, 0, 0, 0.432);
+  width:100%;
+  height:100%;
+  z-index:50;
+}
+
 .imgAccount {
   width:30px;
   height:30px;
@@ -63,6 +73,17 @@ html {
   90% {background:radial-gradient(circle, var(--lineGray) 90%, transparent 0% );}
   95% {background:radial-gradient(circle, var(--lineGray) 95%, transparent 0% );}
   100% {background:radial-gradient(circle, var(--lineGray) 100%, transparent 0% );}
+}
+
+.leftHoverMoveAnimation {
+  animation-name:moveLeftHover;
+  animation-duration:.2s;
+  animation-fill-mode:forwards;
+}
+
+@keyframes moveLeftHover {
+  from {left:-1000px;}
+  to {left:0px;}
 }
 
 /*WEBSITE HEADER*/
@@ -158,7 +179,7 @@ header {
 #leftHover {
   position:fixed;
   top:60px;
-  left:1px;
+  left:0px;
   width:220px;
   height:90vh;
   background-color:white;
@@ -167,6 +188,7 @@ header {
   color:var(--darkGray);
   font-size:1.5rem;
   border:.1px solid;
+  z-index:51;
 }
 
 #leftHover:hover {
@@ -207,7 +229,7 @@ header {
 #smallLeftHover {
   position:fixed;
   top:60px;
-  left:1px;
+  left:0px;
   height:90vh;
   width:70px;
   background-color:white;
@@ -232,6 +254,48 @@ header {
 #smallLeftHover > div > i {
   font-size:2rem;
   margin-bottom:5px;
+}
+
+/*LEFT HOVER FROM MODEL*/
+#leftHoverFromModel {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:220px;
+  height:98%;
+  background-color:white;
+  overflow-y:hidden;
+  overflow-x:hidden;
+  color:var(--darkGray);
+  font-size:1.5rem;
+  border:.1px solid;
+  z-index:51;
+}
+
+#leftHoverFromModel:hover {
+  overflow-y:scroll;
+}
+
+#leftHoverFromModel > nav {
+  padding:5px 0px;
+  border-bottom:.1px solid var(--lineGray);
+}
+
+#leftHoverFromModel > nav .options {
+  padding:10px 10px;
+  cursor:pointer;
+}
+
+#leftHoverFromModel > nav .options:hover {
+  background-color:var(--lightGray);
+}
+
+#leftHoverFromModel > nav .options > i {
+  min-width:30px;
+  max-width:50px;
+  margin-right:10px;
+  text-align:center;
+  font-size:1.8rem;
 }
 
 /*WEBSITE FOOTER*/
