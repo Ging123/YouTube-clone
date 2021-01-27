@@ -1,8 +1,8 @@
 var bigHoverIsVisible = true;
 
 var SmallLeftHoverOptions = {
-  classes:["fas fa-home", "fas fa-fire", "fas fa-tv", "fas fa-book-open"],
-  iconesName:["Home", "Trending", "Subscriptions", "Library"]
+  classes: ["fas fa-home", "fas fa-fire", "fas fa-tv", "fas fa-book-open"],
+  iconesName: ["Home", "Trending", "Subscriptions", "Library"]
 };
 
 //FUNCTIONS FOR MANIPULATE OR CREATE ELEMENTS
@@ -37,9 +37,9 @@ function returnStringOfTheElementClass(elementQuery = "", index = 0) {
 
 
 function executeRippleAnimation(elementQuery = "", index = 0, endAnimation = false) {
-  if(endAnimation === false) { 
-    editElementClass(elementQuery, index, "darkRippleAnimation"); 
-  } else { 
+  if (endAnimation === false) {
+    editElementClass(elementQuery, index, "darkRippleAnimation");
+  } else {
     setTimeout(() => { editElementClass(elementQuery, index, "", "darkRippleAnimation"); }, 220);
   }
 }
@@ -48,10 +48,10 @@ function executeRippleAnimation(elementQuery = "", index = 0, endAnimation = fal
 function putRippleEfectsInTheIcones() {
   const icones = document.getElementsByClassName("circularIconeBorder");
   const len = icones.length;
-  for(let i = 0; i < len; i++) {
-    icones[i].addEventListener("mousedown", () => {executeRippleAnimation(".circularIconeBorder", i)});
-    icones[i].addEventListener("mouseup", () => {executeRippleAnimation(".circularIconeBorder", i, true)});
-    icones[i].addEventListener("mouseout", () => {executeRippleAnimation(".circularIconeBorder", i, true)})
+  for (let i = 0; i < len; i++) {
+    icones[i].addEventListener("mousedown", () => { executeRippleAnimation(".circularIconeBorder", i) });
+    icones[i].addEventListener("mouseup", () => { executeRippleAnimation(".circularIconeBorder", i, true) });
+    icones[i].addEventListener("mouseout", () => { executeRippleAnimation(".circularIconeBorder", i, true) })
   }
 }
 
@@ -60,7 +60,7 @@ function putIconesAndSpanInTheDivInTheSmallHover() {
   const div = document.querySelectorAll("#smallLeftHover div");
   const divLength = div.length;
   const icone = new Array(divLength), span = new Array(divLength);
-  for(let i = 0; i < divLength; i++) {
+  for (let i = 0; i < divLength; i++) {
     icone[i] = createNewElement("i", "", SmallLeftHoverOptions.classes[i]);
     span[i] = createNewElement("span", SmallLeftHoverOptions.iconesName[i]);
     div[i].appendChild(icone[i]);
@@ -68,16 +68,24 @@ function putIconesAndSpanInTheDivInTheSmallHover() {
   }
 }
 
+function getTheWidthOfTheScreen() {
+  const screenSize = window.innerWidth;
+  return screenSize;
+}
+
 //FUNCTION OF INTERATIONS
 function manipulateTheLeftHoverByClick() {
-  if(bigHoverIsVisible === true) {
-    editElementClass("#leftHover", 0, "noVisibleElement");
-    editElementClass("#smallLeftHover", 0, "", "noVisibleElement");
-    bigHoverIsVisible = false;
-  } else {
-    editElementClass("#smallLeftHover", 0, "noVisibleElement");
-    editElementClass("#leftHover", 0, "", "noVisibleElement");
-    bigHoverIsVisible = true;
+  const screenWidth = getTheWidthOfTheScreen();
+  if (screenWidth > 1301) {
+    if (bigHoverIsVisible === true) {
+      editElementClass("#leftHover", 0, "noVisibleElement");
+      editElementClass("#smallLeftHover", 0, "", "noVisibleElement");
+      bigHoverIsVisible = false;
+    } else {
+      editElementClass("#smallLeftHover", 0, "noVisibleElement");
+      editElementClass("#leftHover", 0, "", "noVisibleElement");
+      bigHoverIsVisible = true;
+    }
   }
 }
 
