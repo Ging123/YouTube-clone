@@ -89,6 +89,7 @@ function manipulateTheLeftHoverByClick() {
 
 
 function openOrCloseTheLeftHoverModel(openHover = true) {
+  clearInterval(loop);
   if(openHover === true) {
     editElementClass("#model", 0, "", "noVisibleElement");
     editElementClass(".youtubeLogo", 1, "", "noVisibleElement");
@@ -107,12 +108,10 @@ function openOrCloseTheLeftHoverModel(openHover = true) {
 function closeTheModelIfTheSizeOfTheScreenBeBig() {
   if(window.innerWidth > 1301) {
     openOrCloseTheLeftHoverModel(false);
-    clearInterval(loop);
     if(bigHoverIsVisible === true) {
       bigHoverIsVisible = false;
       manipulateTheLeftHoverByClick();
-    } 
-    else {
+    } else {
       bigHoverIsVisible = true;
       manipulateTheLeftHoverByClick();
     }
