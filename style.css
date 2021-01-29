@@ -92,8 +92,12 @@ header {
   top:0px;
   left:0px;
   width:100%;
+}
+
+#topOfTheHeader {
+  width:100%;
   background-color:white;
-  border:.1px solid black;
+  border-bottom:.1px solid var(--lineGray);
   display:flex;
   flex-flow:row nowrap;
   font-size:1.8rem;
@@ -103,7 +107,7 @@ header {
   justify-content:space-between;
 }
 
-.showIconeInfo {
+header .showIconeInfo {
   position:relative;
 }
 
@@ -126,6 +130,7 @@ header {
   max-width:300px;
   cursor:none;
   display:none;
+  z-index:20;
 }
 
 .youtubeLogo {
@@ -200,19 +205,94 @@ header {
   cursor:pointer;
 }
 
+#wholeBar {
+  position:relative;
+  width:100%;
+}
+
+#videoKindBar {
+  position:relative;
+  display:flex;
+  flex-flow:row nowrap; 
+  white-space:nowrap;
+  color:black;
+  font-size:1.4rem;
+  padding:10px;
+  overflow-x:hidden;
+  border-bottom:.1px solid var(--lineGray);
+}
+
+.videoKindaBarBig {
+  position: relative;
+  left:220px;
+  width:84%;
+}
+
+.videoKindBarSmall {
+  position:relative;
+  left:71px;
+  width:95%;
+}
+
+.kindOfVideos {
+  background-color:rgb(238, 238, 238);
+  border:1px solid var(--lineGray);
+  cursor:pointer;
+  transition:filter .2s;
+  padding:10px;
+  border-radius:100px;
+  margin-right:10px;
+}
+
+.kindOfVideos:hover {
+  filter:brightness(95%);
+}
+
+.arrowForNavagate {
+  position:absolute;
+  bottom:1px;
+  z-index:18;
+  height:99%;
+  padding:10px 8px;
+}
+
+.arrowForNavagate .circularIconeBorder {
+  padding:14px 0px;
+}
+
+#rightArrow {
+  right:0px;
+  background-image:linear-gradient(to left, white 70%, rgba(255, 255, 255, 0.836) 100%,  rgba(255, 255, 255, 0.74) 10%);
+}
+
+#leftArrow {
+  background-image:linear-gradient(to right, white 70%, rgba(255, 255, 255, 0.836) 100%,  rgba(255, 255, 255, 0.74) 10%);
+}
+
+.normalLeftArrow {
+  left:220px;
+}
+
+.adjusteLeftArrow {
+  left:70px;
+}
+
+#leftArrowMoreOnLeft {
+
+}
+
 /*LEFT HOVER*/
 #leftHover {
   position:fixed;
-  top:60px;
+  top:56px;
   left:0px;
   width:220px;
-  height:90vh;
+  height:92vh;
   background-color:white;
   overflow-y:hidden;
   overflow-x:hidden;
   color:var(--darkGray);
   font-size:1.5rem;
-  border:.1px solid;
   z-index:51;
 }
 
@@ -253,14 +333,13 @@ header {
 /*SMALLER LEFT HOVER*/
 #smallLeftHover {
   position:fixed;
-  top:60px;
+  top:56px;
   left:0px;
-  height:90vh;
+  height:92vh;
   width:70px;
   background-color:white;
   color:var(--darkGray);
   font-size:1.5rem;
-  border:.1px solid;
 }
 
 #smallLeftHover > div {
@@ -293,7 +372,6 @@ header {
   overflow-x:hidden;
   color:var(--darkGray);
   font-size:1.5rem;
-  border:.1px solid;
   z-index:51;
 }
 
@@ -321,6 +399,14 @@ header {
   margin-right:10px;
   text-align:center;
   font-size:1.8rem;
+}
+
+#leftHoverFromModel > nav .title {
+  padding:5px 14px;
+  font-weight:600;
+  text-transform:uppercase;
+  font-size:1.4rem;
+  cursor:pointer;
 }
 
 /*WEBSITE FOOTER*/
@@ -351,11 +437,15 @@ footer div:last-child {
 @media(max-width:1300px) {
   #smallLeftHover.noVisibleElement {display:block;}
   #leftHover {display:none;}
+  #videoKindBar{left:71px; width:95%;}
+  #leftArrow {left:70px;}
 }
 
 @media(max-width:805px) {
   #smallLeftHover.noVisibleElement {display:none;}
   #smallLeftHover {display:none;}
+  #videoKindBar {width:120%; left:-71px;}
+  #leftArrow {left:0px;}
 }
 
 @media(max-width:650px) {

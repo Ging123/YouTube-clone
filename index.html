@@ -14,43 +14,63 @@
   <div id="model" class="noVisibleElement" onclick="openOrCloseTheLeftHoverModel(false)"></div>
 
   <header>
-    <div class="youtubeLogo">
-      <i class="fas fa-bars circularIconeBorder" onclick="manipulateTheLeftHoverByClick()"></i>
-      <i class="fab fa-youtube"></i>
-      <span>YouTube</span>
+    <div id="topOfTheHeader">
+      <div class="youtubeLogo">
+        <i class="fas fa-bars circularIconeBorder" onclick="manipulateTheLeftHoverByClick()"></i>
+        <i class="fab fa-youtube"></i>
+        <span>YouTube</span>
+      </div>
+      <div id="searchArea">
+        <input type="text" placeholder="search">
+        <button class="showIconeInfo">
+          <div class="iconeInfo">search</div>
+          <i class="fas fa-search"></i>
+        </button>
+        <i class="fas fa-microphone circularIconeBorder showIconeInfo">
+          <div class="iconeInfo">search with your voice</div>
+        </i>
+        <i class="fas fa-search circularIconeBorder showIconeInfo">
+          <div class="iconeInfo">search</div>
+        </i>
+      </div>
+      <div id="optionsOfMyAccount">
+        <i class="fas fa-video circularIconeBorder showIconeInfo">
+          <div class="iconeInfo">create</div>
+        </i>
+        <i class="fas fa-th circularIconeBorder showIconeInfo">
+          <div class="iconeInfo">YouTube apps</div>
+        </i>
+        <i class="fas fa-bell circularIconeBorder showIconeInfo">
+          <div class="iconeInfo">Notifications</div>
+        </i>
+        <img src="https://yt3.ggpht.com/yti/ANoDKi4fPPkLgTJgOOPU-Xb2_hLQ-KgK6lHAn3IppQ=s88-c-k-c0x00ffffff-no-rj-mo"
+          alt="it wasn´t possible to load the image" class="imgAccount">
+      </div>
     </div>
-    <div id="searchArea">
-      <input type="text" placeholder="search">
-      <button class="showIconeInfo">
-        <div class="iconeInfo">search</div>
-        <i class="fas fa-search"></i>
-      </button>
-      <i class="fas fa-microphone circularIconeBorder showIconeInfo">
-        <div class="iconeInfo">search with your voice</div>
-      </i>
-      <i class="fas fa-search circularIconeBorder showIconeInfo">
-        <div class="iconeInfo">search</div>
-      </i>
+
+    <div id="wholeBar">
+      <nav id="videoKindBar" class="videoKindaBarBig"></nav>
+
+      <div id="rightArrow" class="arrowForNavagate">
+        <i class="fas fa-chevron-right circularIconeBorder showIconeInfo" onclick="scrollTheBarOfTheVideosTags()">
+          <div class="iconeInfo">Next</div>
+        </i>
+      </div>
+
+      <div id="leftArrow" class="arrowForNavagate noVisibleElement normalLeftArrow">
+        <i class="fas fa-chevron-left circularIconeBorder showIconeInfo" onclick="scrollTheBarOfTheVideosTags(false)">
+          <div class="iconeInfo">Previous</div>
+        </i>
+      </div>
     </div>
-    <div id="optionsOfMyAccount">
-      <i class="fas fa-video circularIconeBorder showIconeInfo">
-        <div class="iconeInfo">create</div>
-      </i>
-      <i class="fas fa-th circularIconeBorder showIconeInfo">
-        <div class="iconeInfo">YouTube apps</div>
-      </i>
-      <i class="fas fa-bell circularIconeBorder showIconeInfo">
-        <div class="iconeInfo">Notifications</div>
-      </i>
-      <img src="https://yt3.ggpht.com/yti/ANoDKi4fPPkLgTJgOOPU-Xb2_hLQ-KgK6lHAn3IppQ=s88-c-k-c0x00ffffff-no-rj-mo"
-        alt="it wasn´t possible to load the image" class="imgAccount">
-    </div>
+
+
   </header>
 
   <section id="leftHover">
     <div class="youtubeLogo noVisibleElement" style="padding:10px; border-bottom:.1px solid var(--lineGray);">
       <i class="fas fa-bars circularIconeBorder" onclick="openOrCloseTheLeftHoverModel(false)"
-      style="font-size:2rem;"></i>
+        style="font-size:2rem;"></i>
       <i class="fab fa-youtube"></i>
       <span style="font-size:1.8rem;">YouTube</span>
     </div>

@@ -1,5 +1,10 @@
 var bigHoverIsVisible = true;
-var loop;
+var loop, loop1;
+var alreadyScrolling = false;
+var ms = 0;
+
+var KindOfVideosName = ["Beats", "Animes", "Movies", "Cars", "Lo-fi music", "Rapping", "Live", "Podcast", "Nintendo", "Sonic", "Games",
+  "Mobile Legends", "Hunter x Hunter", "One piece", "Javascript", "Css", "Html", "Tutorial", "Education", "Cats"];
 
 var SmallLeftHoverOptions = {
   classes: ["fas fa-home", "fas fa-fire", "fas fa-tv", "fas fa-book-open"],
@@ -70,6 +75,17 @@ function putIconesAndSpanInTheDivInTheSmallHover() {
   }
 }
 
+
+function putVideoTagsOnTheBarOfKindOfVideos() {
+  const length = KindOfVideosName.length;
+  const tags = new Array(length);
+  const bar = document.getElementById("videoKindBar");
+  for (let i = 0; i < length; i++) {
+    tags[i] = createNewElement("div", KindOfVideosName[i], "kindOfVideos");
+    bar.appendChild(tags[i]);
+  }
+}
+
 //FUNCTION OF INTERATIONS
 function manipulateTheLeftHoverByClick() {
   if (window.innerWidth > 1301) {
@@ -77,10 +93,14 @@ function manipulateTheLeftHoverByClick() {
       editElementClass("#leftHover", 0, "noVisibleElement");
       editElementClass("#smallLeftHover", 0, "", "noVisibleElement");
       bigHoverIsVisible = false;
+      adjustTheSizeOfTheVideoKindBar();
+      adjusteTheSizeOfThePreviousIcone();
     } else {
       editElementClass("#smallLeftHover", 0, "noVisibleElement");
       editElementClass("#leftHover", 0, "", "noVisibleElement");
       bigHoverIsVisible = true;
+      adjustTheSizeOfTheVideoKindBar(false);
+      adjusteTheSizeOfThePreviousIcone(false);
     }
   } else {
     openOrCloseTheLeftHoverModel();
@@ -88,9 +108,29 @@ function manipulateTheLeftHoverByClick() {
 }
 
 
+function adjustTheSizeOfTheVideoKindBar(getBig = true) {
+  if (getBig === true) {
+    editElementClass("#videoKindBar", 0, "videoKindBarSmall", "videoKindaBarBig");
+  } else {
+    editElementClass("#videoKindBar", 0, "videoKindaBarBig", "videoKindBarSmall");
+  }
+}
+
+
+function adjusteTheSizeOfThePreviousIcone(goToLeft = true) {
+  if (goToLeft === true) {
+    editElementClass("#leftArrow", 0, "adjusteLeftArrow", "normalLeftArrow");
+
+  } else {
+    editElementClass("#leftArrow", 0, "normalLeftArrow", "adjusteLeftArrow");
+
+  }
+}
+
+
 function openOrCloseTheLeftHoverModel(openHover = true) {
   clearInterval(loop);
-  if(openHover === true) {
+  if (openHover === true) {
     editElementClass("#model", 0, "", "noVisibleElement");
     editElementClass(".youtubeLogo", 1, "", "noVisibleElement");
     editElementClass("#leftHover", 0, "leftHoverMoveAnimation", "noVisibleElement");
@@ -106,9 +146,9 @@ function openOrCloseTheLeftHoverModel(openHover = true) {
 
 
 function closeTheModelIfTheSizeOfTheScreenBeBig() {
-  if(window.innerWidth > 1301) {
+  if (window.innerWidth > 1301) {
     openOrCloseTheLeftHoverModel(false);
-    if(bigHoverIsVisible === true) {
+    if (bigHoverIsVisible === true) {
       bigHoverIsVisible = false;
       manipulateTheLeftHoverByClick();
     } else {
@@ -119,5 +159,48 @@ function closeTheModelIfTheSizeOfTheScreenBeBig() {
 }
 
 
+function scrollTheBarOfTheVideosTags(scrollForRight = true) {
+  const bar = document.getElementById("videoKindBar");
+  if (alreadyScrolling === false) {
+    loop1 = setInterval(() => {
+      alreadyScrolling = true;
+      if (ms < 200) {
+        if (scrollForRight === true) {
+          bar.scrollLeft += 10;
+        } else {
+          bar.scrollLeft -= 10;
+        }
+        ms += 10;
+      } else {
+        clearInterval(loop1);
+        showLeftArrowIfNeed(bar);
+        showRightArrowIfNeed(bar);
+        ms = 0, alreadyScrolling = false;
+      }
+    }, 1);
+  }
+}
+
+
+function showLeftArrowIfNeed(bar) {
+  if (bar.scrollLeft > 0) {
+    editElementClass("#leftArrow", 0, "", "noVisibleElement");
+  } else {
+    editElementClass("#leftArrow", 0, "noVisibleElement");
+  }
+}
+
+
+function showRightArrowIfNeed(bar) {
+  if (bar.offsetWidth + bar.scrollLeft >= bar.scrollWidth) {
+    editElementClass("#rightArrow", 0, "noVisibleElement");
+    bar.scrollLeft = bar.offsetWidth + bar.scrollLeft;
+  } else {
+    editElementClass("#rightArrow", 0, "", "noVisibleElement");
+  }
+}
+
+
 putRippleEfectsInTheIcones();
 putIconesAndSpanInTheDivInTheSmallHover();
+putVideoTagsOnTheBarOfKindOfVideos();
