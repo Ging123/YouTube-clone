@@ -21,6 +21,15 @@ function createNewElement(tag = "", text = "", elementClass = "", id = "") {
 }
 
 
+function createNewImage(imageClasse = "", imageSrc = "") {
+  const newImage = document.createElement("img");
+  newImage.src = imageSrc;
+  newImage.classList = imageClasse;
+  newImage.alt = "it wasn´t possible to load the image";
+  return newImage;
+}
+
+
 function editElementClass(elementQuery = "", index = 0, newClass = "", removeSomeClass = "") {
   const element = document.querySelectorAll(elementQuery);
   element[index].classList += ` ${newClass}`;
@@ -95,12 +104,14 @@ function manipulateTheLeftHoverByClick() {
       bigHoverIsVisible = false;
       adjustTheSizeOfTheVideoKindBar();
       adjusteTheSizeOfThePreviousIcone();
+      editElementClass("#gridContainerForTheVideos", 0, "gridContainerForTheVideosBig", "gridContainerForTheVideosSmall")
     } else {
       editElementClass("#smallLeftHover", 0, "noVisibleElement");
       editElementClass("#leftHover", 0, "", "noVisibleElement");
       bigHoverIsVisible = true;
       adjustTheSizeOfTheVideoKindBar(false);
       adjusteTheSizeOfThePreviousIcone(false);
+      editElementClass("#gridContainerForTheVideos", 0, "gridContainerForTheVideosSmall", "gridContainerForTheVideosBig");
     }
   } else {
     openOrCloseTheLeftHoverModel();

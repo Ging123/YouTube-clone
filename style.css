@@ -17,6 +17,10 @@ html {
   --darkGray:#3b3b3b;
 }
 
+body {
+  background-color:rgb(248, 248, 248);
+}
+
 /*GENERICS CLASSES AND ID*/
 #model {
   position:absolute;
@@ -25,7 +29,7 @@ html {
   background:rgba(0, 0, 0, 0.432);
   width:100%;
   height:100%;
-  z-index:50;
+  z-index:9999;
 }
 
 .imgAccount {
@@ -92,8 +96,8 @@ header {
   position:fixed;
   top:0px;
   left:0px;
+  z-index:1000;
   width:100%;
-  border:.1px solid;
 }
 
 #topOfTheHeader {
@@ -122,7 +126,7 @@ header .showIconeInfo {
   top:55px;
   left:50%;
   transform:translateX(-50%);
-  background-color:rgba(0, 0, 0, 0.644);
+  background-color:rgba(0, 0, 0, 0.87);
   color:white;
   font-size:1.2rem;
   padding:10px;
@@ -132,7 +136,7 @@ header .showIconeInfo {
   max-width:300px;
   cursor:none;
   display:none;
-  z-index:20;
+  z-index:100;
 }
 
 .youtubeLogo {
@@ -222,6 +226,7 @@ header .showIconeInfo {
   padding:10px;
   overflow-x:hidden;
   border-bottom:.1px solid var(--lineGray);
+  background-color:white;
 }
 
 .videoKindaBarBig {
@@ -292,6 +297,7 @@ header .showIconeInfo {
   color:var(--darkGray);
   font-size:1.5rem;
   z-index:51;
+  border:.1px solid red;
 }
 
 #leftHover:hover {
@@ -337,6 +343,7 @@ header .showIconeInfo {
   width:70px;
   background-color:white;
   color:var(--darkGray);
+  z-index:51;
   font-size:1.5rem;
 }
 
@@ -370,7 +377,7 @@ header .showIconeInfo {
   overflow-x:hidden;
   color:var(--darkGray);
   font-size:1.5rem;
-  z-index:51;
+  z-index:10001;
 }
 
 #leftHoverFromModel:hover {
@@ -409,13 +416,20 @@ header .showIconeInfo {
 
 /*CONTAINER THAT DISPLAY THE VIDEOS*/
 #gridContainerForTheVideos {
-  position:relative;
-  top:120px;
-  left:220px;
-  width:84%;
+  position:relative;  
+  width:100%;
+  top:116px;
   display:grid;
   grid-template-columns:25% 25% 25% 25%;
   border:.1px solid;
+}
+
+.gridContainerForTheVideosSmall {
+  padding:30px 30px 30px 220px;
+}
+
+.gridContainerForTheVideosBig {
+  padding:30px 30px 30px 80px;
 }
 
 .videoContainer {
@@ -428,6 +442,7 @@ header .showIconeInfo {
 
 .videoImageContainer > img {
   width:100%;
+  height:11vw;
   cursor:pointer;
 }
 
@@ -445,7 +460,7 @@ header .showIconeInfo {
   transition:opacity .1s;
 }
 
-.videoImageContainer:hover .iconeBar {
+.videoContainer:hover .iconeBar {
   opacity:1;
 }
 
@@ -456,7 +471,7 @@ header .showIconeInfo {
   color:white;
   background-color:rgba(0, 0, 0, 0.829);
   font-size:1.6rem;
-  font-weight:550;
+  font-weight:600;
   border-radius:2px;
   display:flex;
   flex-flow:row;
@@ -477,7 +492,7 @@ header .showIconeInfo {
 
 .iconeBar:hover .iconeText {
   opacity:1;
-  width:100px;
+  width:115px;
 }
 
 .watchLaterIcone {
@@ -494,10 +509,67 @@ header .showIconeInfo {
   opacity:0;
   overflow:hidden;
   transition:width .2s;
+  font-size:1.4rem;
+  text-transform:uppercase;
 }
 
-.videoImageContainer:hover > .videoTime {
+.videoContainer:hover .videoTime {
   opacity:0;
+}
+
+.videoContainerInfos {
+  display:flex;
+  flex-flow:row;
+  justify-content:space-between;
+  width:100%;
+  border:.1px solid blue;
+  font-size:1.4rem;
+  color:rgb(94, 94, 94);
+  cursor:pointer;
+}
+
+.threeDot {
+  font-size:1.8rem;
+  flex-grow:1;
+  opacity:0;
+}
+
+.threeDot:hover {
+  color:var(--darkGray);
+}
+
+.videoContainer:hover .threeDot {
+  opacity:1;
+}
+
+.channelImage {
+  width:35px;
+  height:35px;
+  border-radius:100px;
+  border:.1px solid yellow;
+}
+
+.videoInfos {
+  display:flex;
+  flex-flow:column;
+  flex-grow:9;
+  margin:0px 4px;
+  border:.1px solid red;
+}
+
+.videoTitle {
+  font-size:1.6rem;
+  font-weight:600;
+  max-height:40px;
+  word-wrap:break-word;
+  overflow:hidden;
+  color:black;
+  margin-bottom:5px;
+  border:.1px solid blue;
+}
+
+.channelName:hover {
+  color:black;
 }
 
 /*WEBSITE FOOTER*/
@@ -530,6 +602,7 @@ footer div:last-child {
   #leftHover {display:none;}
   #videoKindBar{left:71px; width:95%;}
   #leftArrow {left:70px;}
+  .gridContainerForTheVideosSmall {padding:30px 30px 30px 80px;}
 }
 
 @media(max-width:805px) {
@@ -537,6 +610,7 @@ footer div:last-child {
   #smallLeftHover {display:none;}
   #videoKindBar {width:120%; left:-71px;}
   #leftArrow {left:0px;}
+  .gridContainerForTheVideosSmall {padding:20px 20px 20px 20px;}
 }
 
 @media(max-width:650px) {
