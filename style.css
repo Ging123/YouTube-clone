@@ -1,6 +1,7 @@
 * {
   box-sizing:border-box;
   font-family:arial;
+  outline:none;
 }
 
 html {
@@ -92,6 +93,7 @@ header {
   top:0px;
   left:0px;
   width:100%;
+  border:.1px solid;
 }
 
 #topOfTheHeader {
@@ -277,10 +279,6 @@ header .showIconeInfo {
   left:70px;
 }
 
-#leftArrowMoreOnLeft {
-
-}
-
 /*LEFT HOVER*/
 #leftHover {
   position:fixed;
@@ -407,6 +405,99 @@ header .showIconeInfo {
   text-transform:uppercase;
   font-size:1.4rem;
   cursor:pointer;
+}
+
+/*CONTAINER THAT DISPLAY THE VIDEOS*/
+#gridContainerForTheVideos {
+  position:relative;
+  top:120px;
+  left:220px;
+  width:84%;
+  display:grid;
+  grid-template-columns:25% 25% 25% 25%;
+  border:.1px solid;
+}
+
+.videoContainer {
+  border:.1px solid red;
+}
+
+.videoImageContainer {
+  position:relative;
+}
+
+.videoImageContainer > img {
+  width:100%;
+  cursor:pointer;
+}
+
+.videoTime {
+  position:absolute;
+  right:5px;
+  bottom:5px;
+  color:white;
+  font-weight:550;
+  font-size:1.2rem;
+  padding:4px 5px;
+  border-radius:2px;
+  background-color:rgba(0, 0, 0, 0.836);
+  cursor:pointer;
+  transition:opacity .1s;
+}
+
+.videoImageContainer:hover .iconeBar {
+  opacity:1;
+}
+
+.iconeBar {
+  position:absolute;
+  right:5px;
+  white-space:nowrap;
+  color:white;
+  background-color:rgba(0, 0, 0, 0.829);
+  font-size:1.6rem;
+  font-weight:550;
+  border-radius:2px;
+  display:flex;
+  flex-flow:row;
+  padding:6px;
+  cursor:pointer;
+  opacity:0;
+  transition:opacity .2s;
+}
+
+.iconeBar i {
+  width:20px;
+  text-align:center;
+}
+
+.iconeBar:hover {
+  background-color:rgba(0, 0, 0, 0.932);
+}
+
+.iconeBar:hover .iconeText {
+  opacity:1;
+  width:100px;
+}
+
+.watchLaterIcone {
+  top:5px;
+}
+
+.addToQueueIcone {
+  top:40px;
+}
+
+.iconeText {
+  width:0px;
+  text-align:center;
+  opacity:0;
+  overflow:hidden;
+  transition:width .2s;
+}
+
+.videoImageContainer:hover > .videoTime {
+  opacity:0;
 }
 
 /*WEBSITE FOOTER*/

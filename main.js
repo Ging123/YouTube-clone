@@ -120,7 +120,6 @@ function adjustTheSizeOfTheVideoKindBar(getBig = true) {
 function adjusteTheSizeOfThePreviousIcone(goToLeft = true) {
   if (goToLeft === true) {
     editElementClass("#leftArrow", 0, "adjusteLeftArrow", "normalLeftArrow");
-
   } else {
     editElementClass("#leftArrow", 0, "normalLeftArrow", "adjusteLeftArrow");
 
