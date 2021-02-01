@@ -520,6 +520,7 @@ header .showIconeInfo {
   font-size:1.4rem;
   color:rgb(94, 94, 94);
   cursor:pointer;
+  padding:10px 0px;
 }
 
 .threeDot {
@@ -602,7 +603,7 @@ footer div:last-child {
 }
 
 @media(max-width:840px) {
-  #gridContainerForTheVideos{grid-template-columns:45% 45%; justify-content:center;}
+  #gridContainerForTheVideos{grid-template-columns:50% 50%; justify-content:center;}
   .videoImageContainer > img {height:20vw;}
 }
 
@@ -623,6 +624,6 @@ footer div:last-child {
 }
 
 @media(max-width:500px) {
-  #gridContainerForTheVideos{grid-template-columns:75%; justify-content:center; grid-gap:30px 0px;}
+  #gridContainerForTheVideos{grid-template-columns:85%; justify-content:center; grid-gap:30px 0px;}
   .videoImageContainer > img {height:30vw;}
 }
