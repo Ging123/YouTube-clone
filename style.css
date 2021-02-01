@@ -546,7 +546,6 @@ header .showIconeInfo {
   width:35px;
   height:35px;
   border-radius:100px;
-  border:.1px solid yellow;
 }
 
 .videoInfos {
@@ -554,7 +553,6 @@ header .showIconeInfo {
   flex-flow:column;
   flex-grow:9;
   margin:0px 4px;
-  border:.1px solid red;
 }
 
 .videoTitle {
@@ -565,7 +563,6 @@ header .showIconeInfo {
   overflow:hidden;
   color:black;
   margin-bottom:5px;
-  border:.1px solid blue;
 }
 
 .channelName:hover {
