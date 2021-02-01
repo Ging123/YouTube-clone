@@ -145,11 +145,13 @@ function openOrCloseTheLeftHoverModel(openHover = true) {
     editElementClass(".youtubeLogo", 1, "", "noVisibleElement");
     editElementClass("#leftHover", 0, "leftHoverMoveAnimation", "noVisibleElement");
     document.querySelectorAll("#leftHover")[0].id = "leftHoverFromModel";
+    document.getElementsByTagName("body")[0].style.overflow = "hidden";
     loop = setInterval(closeTheModelIfTheSizeOfTheScreenBeBig, 1);
   } else {
     editElementClass("#model", 0, "noVisibleElement");
     editElementClass(".youtubeLogo", 1, "noVisibleElement");
     editElementClass("#leftHoverFromModel", 0, "", "leftHoverMoveAnimation");
+    document.getElementsByTagName("body")[0].style.overflow = "scroll";
     document.querySelectorAll("#leftHoverFromModel")[0].id = "leftHover";
   }
 }

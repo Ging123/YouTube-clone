@@ -23,9 +23,8 @@ body {
 
 /*GENERICS CLASSES AND ID*/
 #model {
-  position:absolute;
-  top:0px;
-  left:0px;
+  position:fixed;
+  bottom:0px;
   background:rgba(0, 0, 0, 0.432);
   width:100%;
   height:100%;
