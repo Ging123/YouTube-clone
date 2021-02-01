@@ -297,7 +297,6 @@ header .showIconeInfo {
   color:var(--darkGray);
   font-size:1.5rem;
   z-index:51;
-  border:.1px solid red;
 }
 
 #leftHover:hover {
@@ -421,7 +420,7 @@ header .showIconeInfo {
   top:116px;
   display:grid;
   grid-template-columns:25% 25% 25% 25%;
-  border:.1px solid;
+  grid-gap:10px 10px;
 }
 
 .gridContainerForTheVideosSmall {
@@ -430,10 +429,6 @@ header .showIconeInfo {
 
 .gridContainerForTheVideosBig {
   padding:30px 30px 30px 80px;
-}
-
-.videoContainer {
-  border:.1px solid red;
 }
 
 .videoImageContainer {
@@ -522,7 +517,6 @@ header .showIconeInfo {
   flex-flow:row;
   justify-content:space-between;
   width:100%;
-  border:.1px solid blue;
   font-size:1.4rem;
   color:rgb(94, 94, 94);
   cursor:pointer;
@@ -602,6 +596,16 @@ footer div:last-child {
   .gridContainerForTheVideosSmall {padding:30px 30px 30px 80px;}
 }
 
+@media(max-width:1140px) {
+  #gridContainerForTheVideos{grid-template-columns:33% 33% 33%;}
+  .videoImageContainer > img {height:15vw;}
+}
+
+@media(max-width:840px) {
+  #gridContainerForTheVideos{grid-template-columns:45% 45%; justify-content:center;}
+  .videoImageContainer > img {height:20vw;}
+}
+
 @media(max-width:805px) {
   #smallLeftHover.noVisibleElement {display:none;}
   #smallLeftHover {display:none;}
@@ -616,4 +620,9 @@ footer div:last-child {
   #searchArea input {display:none;}
   #searchArea button {display:none;}
   #searchArea > i:last-child {display:block;}
+}
+
+@media(max-width:500px) {
+  #gridContainerForTheVideos{grid-template-columns:75%; justify-content:center; grid-gap:30px 0px;}
+  .videoImageContainer > img {height:30vw;}
 }
