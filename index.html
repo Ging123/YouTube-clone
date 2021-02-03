@@ -14,6 +14,9 @@
   <div id="model" class="noVisibleElement" onclick="openOrCloseTheLeftHoverModel(false)"></div>
 
   <header>
+    <div id="youtubeAppsHover" class="noVisibleElement youtubeHeaderHovers"></div>
+    <div id="youtubeCreatorHover" class="noVisibleElement youtubeHeaderHovers"></div>
+
     <div id="topOfTheHeader">
       <div class="youtubeLogo">
         <i class="fas fa-bars circularIconeBorder" onclick="manipulateTheLeftHoverByClick()"></i>
@@ -34,10 +37,10 @@
         </i>
       </div>
       <div id="optionsOfMyAccount">
-        <i class="fas fa-video circularIconeBorder showIconeInfo">
+        <i class="fas fa-video circularIconeBorder showIconeInfo" onclick="openSomeHover('#youtubeCreatorHover')">
           <div class="iconeInfo">create</div>
         </i>
-        <i class="fas fa-th circularIconeBorder showIconeInfo">
+        <i class="fas fa-th circularIconeBorder showIconeInfo" onclick="openSomeHover('#youtubeAppsHover')">
           <div class="iconeInfo">YouTube apps</div>
         </i>
         <i class="fas fa-bell circularIconeBorder showIconeInfo">
