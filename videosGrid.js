@@ -27,7 +27,7 @@ const videosGridInfo = (function () {
       "https://br.web.img2.acsta.net/r_640_360/newsv7/20/05/07/23/47/2428122.jpg",
       "https://d2skuhm0vrry40.cloudfront.net/2020/articles/2020-05-09-12-11/dragon-ball-todas-as-transformacoes-son-goku-1589022707794.jpg/EG11/resize/1200x-1/dragon-ball-todas-as-transformacoes-son-goku-1589022707794.jpg",
       "https://conteudo.imguol.com.br/c/entretenimento/16/2017/06/27/naruto-1498593686428_v2_450x337.png",
-      "https://lh3.googleusercontent.com/proxy/2UOGm3YjMpblaxhKaK0Yms-jnyKlKjYCujPgp-PAlhKSpgMCNcj6heYzX5QQ3dQRc4ZLGhvTITJyjvPCkXoreNbkf9W1ZqNNn5pMaEMJyAhk47XuB08Vxl57KNTvCEDjg1VAMg",
+      "https://www.vagalume.com.br/caio-nog/images/caio-nog.jpg",
       "https://images.pexels.com/photos/1206059/pexels-photo-1206059.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "https://exame.com/wp-content/uploads/2016/09/size_960_16_9_cavaleiros-do-zodiaco1.jpg",
       "https://screenshots.gamebanana.com/img/ss/maps/59cd8fe679a07.jpg",

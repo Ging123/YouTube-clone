@@ -3,12 +3,29 @@ var loop, loop1;
 var alreadyScrolling = false;
 var ms = 0;
 
+var hoverOpen = "";
+var isHoverOpen = false;
+var timeClicked = 0;
+var anyHoverOpen = false;
+
 var KindOfVideosName = ["Beats", "Animes", "Movies", "Cars", "Lo-fi music", "Rapping", "Live", "Podcast", "Nintendo", "Sonic", "Games",
   "Mobile Legends", "Hunter x Hunter", "One piece", "Javascript", "Css", "Html", "Tutorial", "Education", "Cats"];
 
 var SmallLeftHoverOptions = {
   classes: ["fas fa-home", "fas fa-fire", "fas fa-tv", "fas fa-book-open"],
   iconesName: ["Home", "Trending", "Subscriptions", "Library"]
+};
+
+var youtubeHeaderHoverInfos = {
+  appInfoHover: {
+    iconesClasse: ["fas fa-tv", "fas fa-play-circle", "fas fa-child", "fab fa-youtube", "fab fa-youtube"],
+    iconesName: ["YouTube tv", "YouTube music", "YouTube Kids", "Creator academy", "YouTube for artists"]
+  },
+
+  creatorInfoHover: {
+    iconesClasse: ["far fa-circle", "fas fa-play"],
+    iconesName: ["Upload video", "Go live"]
+  }
 };
 
 //FUNCTIONS FOR MANIPULATE OR CREATE ELEMENTS
@@ -92,6 +109,21 @@ function putVideoTagsOnTheBarOfKindOfVideos() {
   for (let i = 0; i < length; i++) {
     tags[i] = createNewElement("div", KindOfVideosName[i], "kindOfVideos");
     bar.appendChild(tags[i]);
+  }
+}
+
+
+function putTheDataOnTheHoversOfHeader(hoverId = "", obj) {
+  const hover = document.getElementById(hoverId);
+  const len = obj.iconesName.length;
+  const divFather = new Array(len), span = new Array(len), icones = new Array(len);
+  for (let i = 0; i < len; i++) {
+    divFather[i] = createNewElement("div");
+    span[i] = createNewElement("span", obj.iconesName[i]);
+    icones[i] = createNewElement("i", "", obj.iconesClasse[i]);
+    divFather[i].appendChild(icones[i]);
+    divFather[i].appendChild(span[i]);
+    hover.appendChild(divFather[i]);
   }
 }
 
@@ -213,6 +245,40 @@ function showRightArrowIfNeed(bar) {
 }
 
 
+function openSomeHover(manipualatedHover = "") {
+  if (anyHoverOpen === false) {
+    anyHoverOpen = true;
+    hoverOpen = manipualatedHover;
+    editElementClass(hoverOpen, 0, "", "noVisibleElement");
+    timeClicked++;
+    if (timeClicked > 1) {
+      isHoverOpen = false;
+    } else {
+      isHoverOpen = true;
+    }
+  } else {
+    if(hoverOpen !== manipualatedHover) {
+      editElementClass(hoverOpen, 0, "noVisibleElement");
+      timeClicked = 0, anyHoverOpen = false;
+      openSomeHover(manipualatedHover);
+    }
+  }
+}
+
+
+document.addEventListener("click", () => {
+  if (isHoverOpen === false) {
+    editElementClass(hoverOpen, 0, "noVisibleElement");
+    timeClicked = 0;
+    anyHoverOpen = false;
+  } else {
+    isHoverOpen = false;
+  }
+});
+
+
 putRippleEfectsInTheIcones();
 putIconesAndSpanInTheDivInTheSmallHover();
 putVideoTagsOnTheBarOfKindOfVideos();
+putTheDataOnTheHoversOfHeader("youtubeAppsHover", youtubeHeaderHoverInfos.appInfoHover);
+putTheDataOnTheHoversOfHeader("youtubeCreatorHover", youtubeHeaderHoverInfos.creatorInfoHover);

@@ -284,6 +284,49 @@ header .showIconeInfo {
   left:70px;
 }
 
+.youtubeHeaderHovers {
+  position:absolute;
+  top:50px;
+  background-color:white;
+  z-index:1001;
+  padding:7px 0px;
+  border-radius:2px;
+  box-shadow:.1px .1px 1px gray;
+}
+
+.youtubeHeaderHovers > div {
+  display:flex;
+  flex-flow:row;
+  padding:10px;
+  font-weight:500;
+  font-size:1.6rem;
+  color:black;
+}
+
+.youtubeHeaderHovers > div:hover {
+  cursor:pointer;
+  background:var(--lightGray);
+}
+
+.youtubeHeaderHovers > div > i {
+  color:red;
+  min-width:30px;
+  max-width:50px;
+  margin-right:10px;
+  text-align:center;
+  font-size:1.8rem;
+}
+
+#youtubeAppsHover {
+  right:100px;
+  width:200px;
+}
+
+#youtubeCreatorHover {
+  right:25px;
+  width:175px;
+}
+
 /*LEFT HOVER*/
 #leftHover {
   position:fixed;
