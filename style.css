@@ -196,6 +196,55 @@ header .showIconeInfo {
   display:none;
 }
 
+#responsiveSearchBar {
+  position:absolute;
+  left:0px;
+  width:100%;
+  background-color:white;
+  z-index:1002;
+  padding:10px;
+}
+
+.flexResponsiveSearchBar {
+  display:flex;
+  flex-flow:row;
+  justify-content:space-between;
+  align-items:center;
+}
+
+#searchDiv {
+  border:.1px solid;
+  width:90%;
+  margin-left:10px;
+}
+
+#responsiveSearchBar input {
+  padding:5px 10px;
+  font-size:1.6rem;
+  outline:none;
+  width:80%;
+  margin-left:10px;
+  border:.1px solid var(--lineGray);
+}
+
+#responsiveSearchBar button {
+  position:relative;
+  right:6px;
+  bottom:.1px;
+  width:65px;
+  height:30px;
+  border:.1px solid var(--lineGray);
+  cursor:pointer;
+  color:gray;
+  outline:none;
+}
+
+#responsiveSearchBar button:hover {
+  color:black;
+  box-shadow:0px 0px 1px gray;
+}
+
+
 #optionsOfMyAccount {
   display:flex;
   flex-flow:row;
@@ -664,6 +713,10 @@ footer div:last-child {
   #searchArea input {display:none;}
   #searchArea button {display:none;}
   #searchArea > i:last-child {display:block;}
+}
+
+@media(min-width:650px) {
+  #responsiveSearchBar{display:none;}
 }
 
 @media(max-width:500px) {

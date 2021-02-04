@@ -257,7 +257,7 @@ function openSomeHover(manipualatedHover = "") {
       isHoverOpen = true;
     }
   } else {
-    if(hoverOpen !== manipualatedHover) {
+    if (hoverOpen !== manipualatedHover) {
       editElementClass(hoverOpen, 0, "noVisibleElement");
       timeClicked = 0, anyHoverOpen = false;
       openSomeHover(manipualatedHover);
@@ -266,11 +266,22 @@ function openSomeHover(manipualatedHover = "") {
 }
 
 
+function openOrCloseTheSearchBarMobile(isOpen = true) {
+  if(isOpen === true) {
+    editElementClass("#responsiveSearchBar", 0, "noVisibleElement", "flexResponsiveSearchBar");
+  } else {
+    editElementClass("#responsiveSearchBar", 0, "flexResponsiveSearchBar", "noVisibleElement");
+  }
+}
+
+
 document.addEventListener("click", () => {
   if (isHoverOpen === false) {
-    editElementClass(hoverOpen, 0, "noVisibleElement");
-    timeClicked = 0;
-    anyHoverOpen = false;
+    if (hoverOpen !== "") {
+      editElementClass(hoverOpen, 0, "noVisibleElement");
+      timeClicked = 0;
+      anyHoverOpen = false;
+    }
   } else {
     isHoverOpen = false;
   }
