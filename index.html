@@ -52,6 +52,11 @@
         </i>
       </div>
 
+      <div id="mobileBar" class="noVisibleElement">
+        <i class="fas fa-rss-square circularIconeBorder"></i>
+        <i class="fas fa-bell circularIconeBorder"></i>
+      </div>
+
       <div id="optionsOfMyAccount">
         <i class="fas fa-video circularIconeBorder showIconeInfo" onclick="openSomeHover('#youtubeCreatorHover')">
           <div class="iconeInfo">create</div>
@@ -69,21 +74,17 @@
 
     <div id="wholeBar">
       <nav id="videoKindBar" class="videoKindaBarBig"></nav>
-
       <div id="rightArrow" class="arrowForNavagate">
         <i class="fas fa-chevron-right circularIconeBorder showIconeInfo" onclick="scrollTheBarOfTheVideosTags()">
           <div class="iconeInfo">Next</div>
         </i>
       </div>
-
       <div id="leftArrow" class="arrowForNavagate noVisibleElement normalLeftArrow">
         <i class="fas fa-chevron-left circularIconeBorder showIconeInfo" onclick="scrollTheBarOfTheVideosTags(false)">
           <div class="iconeInfo">Previous</div>
         </i>
       </div>
     </div>
-
-
   </header>
 
   <section id="leftHover">
@@ -222,6 +223,7 @@
 
   <script src="main.js"></script>
   <script src="videosGrid.js"></script>
+  <script src="mobile.js"></script>
 </body>
 
 </html>

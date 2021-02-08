@@ -260,6 +260,10 @@ header .showIconeInfo {
   cursor:pointer;
 }
 
+#mobileBar {
+  flex-flow:row;
+}
+
 #wholeBar {
   position:relative;
   width:100%;
@@ -619,6 +623,7 @@ header .showIconeInfo {
   font-size:1.8rem;
   flex-grow:1;
   opacity:0;
+  text-align:center;
 }
 
 .threeDot:hover {
@@ -704,7 +709,7 @@ footer div:last-child {
   #smallLeftHover {display:none;}
   #videoKindBar {width:120%; left:-71px;}
   #leftArrow {left:0px;}
-  .gridContainerForTheVideosSmall {padding:20px 20px 20px 20px;}
+  .gridContainerForTheVideosSmall {padding:20px;}
 }
 
 @media(max-width:650px) {
@@ -722,4 +727,17 @@ footer div:last-child {
 @media(max-width:500px) {
   #gridContainerForTheVideos{grid-template-columns:85%; justify-content:center; grid-gap:30px 0px;}
   .videoImageContainer > img {height:30vw;}
+}
+
+@media(max-width:440px) {
+  .iconeInfo {opacity:0;}
+  #searchArea .fa-microphone{display:none;}
+  #wholeBar {display:none;}
+  #optionsOfMyAccount i {display:none;}
+  #mobileBar.noVisibleElement {display:flex;}
+  #gridContainerForTheVideos{grid-template-columns:100%; top:50px;}
+  .videoImageContainer > img {height:50vw;}
+  .iconeBar{display:none;}
+  .gridContainerForTheVideosBig {padding:5px;}
+  
 }
